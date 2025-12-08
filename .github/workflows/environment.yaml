@@ -17,7 +17,7 @@ jobs:
     runs-on : ubuntu-latest
     environment: Stage
     steps:
-      - name: first action
+      - name: second action
         env:
           ENV_NAME: ${{vars.ENV_NAME}}
         run: |
@@ -25,9 +25,9 @@ jobs:
 
   job3:
     runs-on : ubuntu-latest
-    environment: Dev
+    environment: Prod
     steps:
-      - name: first action
+      - name: third action
         env:
           ENV_NAME: ${{vars.ENV_NAME}}
         run: |
