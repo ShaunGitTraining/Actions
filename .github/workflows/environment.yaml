@@ -10,5 +10,25 @@ jobs:
       - name: first action
         env:
           ENV_NAME:${{vars.ENV_NAME}}
-          run: |
-            echo "Environment Name is $ENV_NAME"
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job2:
+    runs-on : ubuntu-latest
+    environment: Stage
+    steps:
+      - name: first action
+        env:
+          ENV_NAME:${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job3:
+    runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: first action
+        env:
+          ENV_NAME:${{vars.ENV_NAME}}
+        run: |
+        echo "Environment Name is $ENV_NAME"
