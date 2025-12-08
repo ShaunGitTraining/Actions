@@ -1,0 +1,10 @@
+name: sample action file - dispatch
+on:
+  workflow_dispatch
+      
+jobs:
+  job1:
+    runs-on : ubuntu-latest
+    steps:
+      - name: first action
+        run: echo "Hello World from dispatch branch"
