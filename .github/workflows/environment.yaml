@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: first action
         env:
-          ENV_NAME:${{vars.ENV_NAME}}
+          ENV_NAME: ${{vars.ENV_NAME}}
         run: |
           echo "Environment Name is $ENV_NAME"
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: first action
         env:
-          ENV_NAME:${{vars.ENV_NAME}}
+          ENV_NAME: ${{vars.ENV_NAME}}
         run: |
           echo "Environment Name is $ENV_NAME"
 
@@ -29,6 +29,6 @@ jobs:
     steps:
       - name: first action
         env:
-          ENV_NAME:${{vars.ENV_NAME}}
+          ENV_NAME: ${{vars.ENV_NAME}}
         run: |
           echo "Environment Name is $ENV_NAME"
