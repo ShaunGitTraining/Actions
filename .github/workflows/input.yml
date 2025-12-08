@@ -2,11 +2,11 @@ name: sample action file - input
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment to deploy to'
+      build:
+        description: 'Type of the Build'
         required: true
         type: choice
-        options: ['Dev', 'Stage', 'Prod']
+        options: ['CI', 'CD']
 
       version:
         description: 'Application version'
@@ -24,6 +24,7 @@ jobs:
         run: |
           echo "Environment Name is $ENV_NAME"
           echo "Application version: ${{ github.event.inputs.version }}"
+          echo "Build Type: ${{ github.event.inputs.build }}"
 
   job2:
     runs-on : ubuntu-latest
