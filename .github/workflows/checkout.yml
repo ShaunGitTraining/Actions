@@ -46,8 +46,21 @@ jobs:
         run: |
           echo "Environment Name is $ENV_NAME"
 
-  job4:
+  job5:
     runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: print content  
+        run: |
+          echo "Environment Name is $ENV_NAME"
+          cat README.md
+
+  job6:
+    runs-on : ubuntu-latest
+    needs: job5
     environment: Dev
     steps:
       - name: Checkout Code
