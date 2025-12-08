@@ -1,0 +1,40 @@
+name: sample action file - environment
+on:
+  workflow_dispatch
+  input:
+    environment:
+            description: 'Environment to deploy to'
+            required: true
+            type: choice
+            options: ['dev', 'staging', 'production']
+      
+jobs:
+  job1:
+    runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: first action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job2:
+    runs-on : ubuntu-latest
+    environment: Stage
+    steps:
+      - name: second action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job3:
+    runs-on : ubuntu-latest
+    environment: Prod
+    steps:
+      - name: third action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
