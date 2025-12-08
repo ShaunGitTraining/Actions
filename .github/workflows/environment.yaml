@@ -1,0 +1,14 @@
+name: sample action file - environment
+on:
+  workflow_dispatch
+      
+jobs:
+  job1:
+    runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: first action
+        env:
+          ENV_NAME:${{vars.ENV_NAME}}
+          run: |
+            echo "Environment Name is $ENV_NAME"
