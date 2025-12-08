@@ -1,8 +1,8 @@
 name: sample action file
 on:
   push: 
-    branches:
-      -main
+    branches: [ main ]
+      
 jobs:
   job1:
     runs-on : ubuntu-latest
