@@ -31,4 +31,4 @@ jobs:
         env:
           ENV_NAME:${{vars.ENV_NAME}}
         run: |
-        echo "Environment Name is $ENV_NAME"
+          echo "Environment Name is $ENV_NAME"
