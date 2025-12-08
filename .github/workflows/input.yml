@@ -1,12 +1,12 @@
-name: sample action file - environment
+name: sample action file - input
 on:
-  workflow_dispatch
-  input:
-    environment:
-            description: 'Environment to deploy to'
-            required: true
-            type: choice
-            options: ['dev', 'staging', 'production']
+  workflow_dispatch:
+    inputs:
+      environment:
+              description: 'Environment to deploy to'
+              required: true
+              type: choice
+              options: ['dev', 'staging', 'production']
       
 jobs:
   job1:
