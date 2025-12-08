@@ -1,0 +1,59 @@
+name: sample action file - checkout
+on:
+  workflow_dispatch:
+    inputs:
+      build:
+        description: 'Type of the Build'
+        required: true
+        type: choice
+        options: ['CI', 'CD']
+
+      version:
+        description: 'Application version'
+        required: false
+        type: string
+      
+jobs:
+  job1:
+    runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: first action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+          echo "Application version: ${{ github.event.inputs.version }}"
+          echo "Build Type: ${{ github.event.inputs.build }}"
+
+  job2:
+    runs-on : ubuntu-latest
+    environment: Stage
+    steps:
+      - name: second action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job3:
+    runs-on : ubuntu-latest
+    environment: Prod
+    steps:
+      - name: third action
+        env:
+          ENV_NAME: ${{vars.ENV_NAME}}
+        run: |
+          echo "Environment Name is $ENV_NAME"
+
+  job4:
+    runs-on : ubuntu-latest
+    environment: Dev
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: print content  
+        run: |
+          echo "Environment Name is $ENV_NAME"
+          cat README.md
