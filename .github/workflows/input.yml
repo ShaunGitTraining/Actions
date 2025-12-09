@@ -14,7 +14,7 @@ on:
         type: string
 
       releaseBuild:
-        description: 'A boolean input'
+        description: 'releaseBuild'
         required: false
         type: boolean
         default: false
