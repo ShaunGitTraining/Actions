@@ -79,4 +79,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run custom shell script
-        run: bash scripts/hello.sh
+        run: bash scripts/script.sh
