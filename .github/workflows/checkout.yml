@@ -70,3 +70,12 @@ jobs:
         run: |
           echo "Environment Name is $ENV_NAME"
           cat sample.txt
+
+  run-shell:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout repository
+        uses: actions/checkout@v4
+
+        - name: Run custom shell script
+        run: bash scripts/hello.sh
