@@ -18,5 +18,5 @@ jobs:
         
 
       - name: print file content
-        run: echo "Hello World from dispatch branch"
+        run: echo "Hello World from main branch"
              cat sample.txt
