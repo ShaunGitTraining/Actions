@@ -8,5 +8,5 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - name: first action
-        run: echo "Hello World"
+        run: echo "Hello World on 10th Dec"
   
