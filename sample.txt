@@ -1,2 +1,4 @@
 Sample text file
 new commit added
+
+This new line is available in dispatch branch
