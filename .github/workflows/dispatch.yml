@@ -3,8 +3,20 @@ on:
   workflow_dispatch
       
 jobs:
-  job1:
+  Helloworld:
     runs-on : ubuntu-latest
     steps:
       - name: first action
         run: echo "Hello World from dispatch branch"
+
+  checkout:
+    runs-on : ubuntu-latest
+    steps:
+        
+      - name: checkout
+        uses: actions/checkout@v4
+        
+
+      - name: print file content
+        run: echo "Hello World from dispatch branch"
+             cat sample.txt
