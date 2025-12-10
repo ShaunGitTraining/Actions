@@ -7,7 +7,7 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - name: first action
-        run: echo "Hello World from dispatch branch"
+        run: echo "Hello World from dispatch workflow"
 
   checkout:
     runs-on : ubuntu-latest
@@ -18,5 +18,6 @@ jobs:
         
 
       - name: print file content
-        run: echo "Hello World from main branch"
+        run: |
+             echo "Hello World from main branch"
              cat sample.txt
